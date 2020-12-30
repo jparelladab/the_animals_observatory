@@ -1,0 +1,43 @@
+// Button
+
+.button-music-div{
+	width: auto;
+	font-family: $super;
+	font-size: 15px;
+	display:inline-block;
+	background: white;
+	border-radius: 60px;
+	padding: 5px 15px;
+	margin: 20px 0;
+	opacity: 0;
+	.music-button{
+		width: 22px;
+		margin-right: 1px;
+	}
+
+	.audio{
+		visibility: hidden;
+	}
+}
+
+.category-image{
+	position: relative;
+	cursor: pointer;
+	margin: 20px 0;
+	.button-collection{
+		display: none;
+	}
+}
+
+
+.button-collection{
+	display:none;
+	background: white;
+	border-radius: 60px;
+	padding: 5px 15px;
+	font-family: $super;
+	font-size: 15px;
+	opacity: 1;
+	z-index: 999;
+}
+
