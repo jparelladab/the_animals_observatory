@@ -7,8 +7,8 @@ body{
 	padding: 0;
   	height: 100%;
 	outline: none !important;
-   overflow-x: hidden;
-   overflow-y: auto;
+   overflow-x: scroll;
+   overflow-y: hidden;
 	font-size: 20px;
 	opacity: 1;
 }
@@ -46,7 +46,7 @@ a:focus{
 }
 
 .welcome-div{
-   opacity: 0;
+   opacity:1;
    font-family: $america;
    text-align: center;
    position: absolute;

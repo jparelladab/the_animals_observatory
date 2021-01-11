@@ -20,14 +20,12 @@ jQuery(document).ready(function ($) {
     
 
     //LOADER
-    var showTimeout = setTimeout(function() {
-        $('.dots').fadeIn(500);
-    }, 1000); 
+   
 
     $(window).on('load', function() {
         
-        clearTimeout(showTimeout);
-        $('.dots').fadeOut();
+       
+        
         $('.welcome-div').css('opacity', '1');
         
         
@@ -35,17 +33,17 @@ jQuery(document).ready(function ($) {
 
     $(document).on('click', '#button-inside', function(){
         $('.loader').fadeOut();
-        $('body').css('overflow-y', 'auto');
-        $('#ball').css('opacity', '1');
-        $('.video_div').children('video').prop('muted', false);
-        $('.video_div').children('video').get(0).play();
-        $('.lg-row-bg-video').children('video').get(0).play();
-        $(document).scrollTop(0); 
-        setTimeout(function() {
-            var rellax = new Rellax('.rellax', {
-                  wrapper:'.gryd-type'
-                });
-        }, 300);
+        
+        // $('#ball').css('opacity', '1');
+        // $('.video_div').children('video').prop('muted', false);
+        // $('.video_div').children('video').get(0).play();
+        // $('.lg-row-bg-video').children('video').get(0).play();
+        // $(document).scrollTop(0); 
+        // setTimeout(function() {
+        //     var rellax = new Rellax('.rellax', {
+        //           wrapper:'.gryd-type'
+        //         });
+        // }, 300);
           
     });
 

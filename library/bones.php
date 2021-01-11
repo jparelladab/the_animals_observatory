@@ -119,7 +119,8 @@ function bones_scripts_and_styles() {
   if (!is_admin()) {
 
         wp_register_style('fawesome-css', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css', array(), '', 'all' );
-        wp_register_style('bootstrap-css', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css', array(), '', 'all' );
+        // wp_register_style('bootstrap-css', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css', array(), '', 'all' );
+        wp_register_style( 'bootstrap-css', 'https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css', array(), '');
         wp_register_style('slick-css', 'http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css', array(), '', 'all' );
         wp_register_style( 'stylesheet', get_stylesheet_directory_uri() . '/assets/css/frontend.min.css', array(), '', 'all' );
 
@@ -128,7 +129,7 @@ function bones_scripts_and_styles() {
         wp_register_script( 'slick-js', 'http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js', array( 'jquery' ), '', true );
         
         wp_register_script( 'main-js', get_stylesheet_directory_uri() . '/assets/js/index.js', array( 'jquery' ), '', true );
-        wp_register_script( 'mouse-move-js', get_stylesheet_directory_uri() . '/assets/js/mouseMove.js', array( 'jquery' ), '', true );
+        // wp_register_script( 'mouse-move-js', get_stylesheet_directory_uri() . '/assets/js/mouseMove.js', array( 'jquery' ), '', true );
         wp_register_script( 'progress-js', get_stylesheet_directory_uri() . '/assets/js/progressBar.js', array( 'jquery' ), '', true );
         wp_register_script( 'marqueejs', get_stylesheet_directory_uri() . '/assets/js/src/jquery.marquee.js', array( 'jquery' ), '', true );
         wp_register_script( 'rellaxjs', get_stylesheet_directory_uri() . '/assets/js/src/rellax.min.js', array( 'jquery' ), '', true );
@@ -148,7 +149,7 @@ function bones_scripts_and_styles() {
        
         wp_enqueue_script( 'slick-js' );
         wp_enqueue_script( 'main-js' );
-        wp_enqueue_script( 'mouse-move-js' );
+        // wp_enqueue_script( 'mouse-move-js' );
         wp_enqueue_script( 'marqueejs' );
         wp_enqueue_script( 'progress-js' );
         wp_enqueue_script( 'rellaxjs' );

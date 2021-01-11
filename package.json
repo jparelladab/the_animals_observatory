@@ -9,18 +9,18 @@
   "devDependencies": {
     "bootstrap-sass": "*",
     "es6-promise": "*",
-    "gulp": "^3.9.1",
     "gulp-autoprefixer": "*",
-    "gulp-clean-css": "*",
-    "gulp-csscomb": "*",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-csscomb": "^3.1.0",
     "gulp-merge-media-queries": "*",
-    "gulp-notify": "*",
+    "gulp-notify": "^3.2.0",
     "gulp-plumber": "*",
     "gulp-rename": "*",
-    "gulp-sass": "*",
+    "gulp-sass": "^4.1.0",
     "gulp-sourcemaps": "*"
   },
   "dependencies": {
+    "gulp": "^3.9.1",
     "gulp-concat": "^2.6.0",
     "video.js": "^7.6.5"
   }
