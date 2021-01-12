@@ -242,358 +242,60 @@ header {
   font-size: 14px;
   font-family: "GT Super Text"; }
 
-.main-content {
-  width: 100%;
-  height: auto;
-  transition: all 0.3s ease;
-  background-color: #f6f7f2; }
-  .main-content .wrap {
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    overflow: hidden;
-    height: 100%;
-    width: 100%;
-    z-index: 1;
-    pointer-events: none; }
-    .main-content .wrap #ball {
-      border-radius: 50%;
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      margin: -5px 0 0 -5px;
-      pointer-events: none;
-      transition: opacity 0.5s ease, width 0.5s ease, height 0.5s ease, background 0.5s linear;
-      z-index: 99999;
-      opacity: 0; }
-      @media (max-width: 1024px) {
-        .main-content .wrap #ball {
-          display: none; } }
-    .main-content .wrap #ball.active {
-      width: auto;
-      height: auto; }
-  .main-content .lg-row-bg-image img {
-    pointer-events: none;
-    -o-object-fit: cover;
-    object-fit: cover;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0; }
-  .main-content .lg-textformat-parent p {
-    padding: 5px;
-    background-color: white;
-    border-radius: 60px;
-    text-align: center; }
-  @media (min-width: 701px) {
-    .main-content #laygrid_post_2.lg-desktop-grid {
-      padding-bottom: 0%; } }
-  @media (min-width: 701px) {
-    .main-content #laygrid_post_2.lg-desktop-grid {
-      padding-top: 0%; } }
-  .main-content .slideshow .item-slide-img {
-    height: 100vh;
-    width: 100%;
-    background-size: cover !important;
-    background-repeat: no-repeat !important;
-    background-position: top center !important; }
-  .main-content .slick-dots {
-    position: absolute;
-    bottom: 0;
-    z-index: 9999;
-    width: 100%;
-    color: black;
-    display: flex;
-    justify-content: center;
-    list-style-type: none; }
-  .main-content .slick-dots li {
-    margin-right: 5px; }
-  .main-content .splitTextDiv {
-    font-size: 90px;
-    font-weight: 700;
-    text-align: center;
-    margin-bottom: 10px;
-    font-family: "GT America";
-    color: black; }
-    @media (max-width: 1024px) {
-      .main-content .splitTextDiv {
-        font-size: 60px; } }
-    @media (max-width: 990px) {
-      .main-content .splitTextDiv {
-        font-size: 50px; } }
-    @media (max-width: 767px) {
-      .main-content .splitTextDiv {
-        font-size: 30px; } }
-  .main-content .lg-contains-CBL_metabox .lg-type-stack {
-    height: 100vh; }
-  .main-content .pagina {
-    overflow: auto; }
+.js-marquee {
+  display: flex; }
 
-.button-music-div {
-  width: auto;
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 10px 30px; }
+  footer .sound-logo img {
+    width: 14px; }
+  footer .copyright {
+    font-family: "GT Super Text";
+    font-size: 15px; }
+    footer .copyright svg {
+      width: 14px; }
+
+.collection-container {
+  overflow: visible;
+  margin-top: 60px; }
+
+.text-center {
   font-family: "GT Super Text";
-  font-size: 15px;
-  display: inline-block;
-  background: white;
-  border-radius: 60px;
-  padding: 5px 15px;
-  margin: 20px 0;
-  opacity: 0; }
-  .button-music-div .music-button {
-    width: 22px;
-    margin-right: 1px; }
-  .button-music-div .audio {
-    visibility: hidden; }
+  font-size: 18px; }
 
-.category-image {
-  position: relative;
-  cursor: pointer;
-  margin: 20px 0; }
-  .category-image .button-collection {
+.collection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer; }
+  .collection img {
+    object-fit: cover;
+    width: auto;
+    height: 65vh; }
+
+.flickity-button {
+  background: transparent;
+  color: #000;
+  height: 100% !important;
+  top: 0;
+  width: 200px !important;
+  border-radius: 0px;
+  transform: translateY(0); }
+  .flickity-button svg {
     display: none; }
 
-.button-collection {
-  display: none;
-  background: white;
-  border-radius: 60px;
-  padding: 5px 15px;
-  font-family: "GT Super Text";
-  font-size: 15px;
-  opacity: 1;
-  z-index: 999; }
+.flickity-button.previous {
+  background: transparent;
+  cursor: url("cursor/left.png"), auto; }
 
-.video_div {
-  position: relative;
-  padding-bottom: 56.25%;
-  height: 0; }
-  .video_div video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%; }
-  .video_div .button-collection {
-    display: inline-block;
-    position: absolute;
-    top: 40px;
-    left: 50px;
-    background: white;
-    border-radius: 60px;
-    padding: 5px 10px;
-    font-family: "GT Super Text";
-    font-size: 15px;
-    opacity: 0;
-    z-index: 999; }
-    @media (max-width: 767px) {
-      .video_div .button-collection {
-        top: 20px;
-        left: 20px; } }
-    .video_div .button-collection img {
-      width: 22px;
-      height: auto; }
-
-.slider_div {
-  display: flex; }
-  @media (max-width: 1024px) {
-    .slider_div {
-      display: block; } }
-  .slider_div .product-background-div {
-    height: 100vh;
-    width: 50%;
-    background-position: center center !important;
-    background-repeat: no-repeat !important;
-    background-size: cover !important;
-    cursor: pointer; }
-    @media (max-width: 1024px) {
-      .slider_div .product-background-div {
-        width: 100%; } }
-    @media (max-width: 767px) {
-      .slider_div .product-background-div {
-        height: 60vh; } }
-  .slider_div .product-background-div.total .collection {
-    width: 100%;
-    height: 100%; }
-  .slider_div .product-background-div.collection-div-vertical {
-    display: flex; }
-    .slider_div .product-background-div.collection-div-vertical .collection {
-      width: 50%;
-      height: 100%; }
-  .slider_div .product-background-div.collection-div-horizontal {
-    display: grid; }
-    .slider_div .product-background-div.collection-div-horizontal .collection {
-      width: 100%; }
-  .slider_div .main-slideshow {
-    height: 100vh;
-    width: 50%;
-    position: relative; }
-    @media (max-width: 1024px) {
-      .slider_div .main-slideshow {
-        width: 100%; } }
-    @media (max-width: 767px) {
-      .slider_div .main-slideshow {
-        height: 60vh; } }
-    .slider_div .main-slideshow .slideshow {
-      width: 100%;
-      height: 100%; }
-    .slider_div .main-slideshow .slide {
-      width: 100%;
-      height: 100vh;
-      background-position: center center !important;
-      background-repeat: no-repeat !important;
-      background-size: cover !important; }
-      @media (max-width: 767px) {
-        .slider_div .main-slideshow .slide {
-          height: 60vh; } }
-    .slider_div .main-slideshow .text-slider {
-      font-family: "GT Super Text";
-      font-size: 30px;
-      color: black;
-      margin-top: 70px;
-      margin-left: 50px; }
-      @media (max-width: 767px) {
-        .slider_div .main-slideshow .text-slider {
-          font-size: 20px;
-          margin-top: 40px;
-          margin-left: 20px; } }
-    .slider_div .main-slideshow i {
-      color: #cccccc;
-      font-size: 12px; }
-    .slider_div .main-slideshow .slick-active i {
-      color: #0000ff; }
-    .slider_div .main-slideshow .arrows {
-      display: flex;
-      width: 100%;
-      height: 100vh;
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: 999; }
-      .slider_div .main-slideshow .arrows .left {
-        width: 50%;
-        cursor: url("cursor/left.png"), auto; }
-      .slider_div .main-slideshow .arrows .right {
-        width: 50%;
-        cursor: url("cursor/right.png"), auto; }
-
-.ajax-result-container {
-  width: 500px;
-  background-color: #f6f7f2;
-  height: 100vh;
-  position: fixed;
-  left: -100%;
-  z-index: 99; }
-  @media (max-width: 990px) {
-    .ajax-result-container {
-      width: 100%; } }
-
-.single-collection-slider {
-  padding: 0;
-  width: 100%;
-  background-color: #f6f7f2;
-  list-style-type: none;
-  opacity: 0;
-  transition: opacity 0.7s ease; }
-  .single-collection-slider .slide-collection {
-    height: 100vh; }
-    .single-collection-slider .slide-collection .grid {
-      display: grid;
-      justify-content: center;
-      align-content: center;
-      height: 100vh;
-      width: 100%; }
-      @media (max-width: 350px) {
-        .single-collection-slider .slide-collection .grid {
-          margin: 20px auto; } }
-    .single-collection-slider .slide-collection .mdiv-main {
-      width: 25px;
-      height: 25px;
-      justify-self: end;
-      margin-right: 20px;
-      display: none; }
-      @media (max-width: 990px) {
-        .single-collection-slider .slide-collection .mdiv-main {
-          display: block; } }
-    .single-collection-slider .slide-collection .mdiv {
-      height: 25px;
-      width: 2px;
-      margin-left: 12px;
-      background-color: black;
-      transform: rotate(45deg);
-      Z-index: 1; }
-    .single-collection-slider .slide-collection .md {
-      height: 25px;
-      width: 2px;
-      background-color: black;
-      transform: rotate(90deg);
-      Z-index: 2; }
-    .single-collection-slider .slide-collection img {
-      width: 70%;
-      margin: 0 auto;
-      cursor: url("cursor/right.png"), auto;
-      display: block; }
-    .single-collection-slider .slide-collection h3 {
-      font-size: 30px;
-      text-align: center;
-      margin: 20px auto;
-      font-family: "GT America";
-      padding: 0 40px; }
-      @media (max-width: 990px) {
-        .single-collection-slider .slide-collection h3 {
-          font-size: 25px; } }
-      @media (max-width: 350px) {
-        .single-collection-slider .slide-collection h3 {
-          font-size: 20px;
-          margin: 0px auto 5px; } }
-    .single-collection-slider .slide-collection p {
-      font-family: "GT Super Text";
-      font-size: 15px;
-      text-align: center; }
-      @media (max-width: 350px) {
-        .single-collection-slider .slide-collection p {
-          font-size: 13px; } }
-    .single-collection-slider .slide-collection .code {
-      font-family: "GT Pressura Mono";
-      font-size: 15px;
-      text-transform: uppercase;
-      text-align: center;
-      margin: 10px auto; }
-      @media (max-width: 350px) {
-        .single-collection-slider .slide-collection .code {
-          font-size: 13px;
-          margin: 5px auto 5px; } }
-    .single-collection-slider .slide-collection .link-button {
-      color: white;
-      background-color: #0000ff;
-      padding: 7px 15px;
-      border-radius: 50px;
-      width: 200px;
-      font-size: 15px;
-      font-family: "GT Super Text";
-      margin: 0 auto;
-      text-align: center; }
-      @media (max-width: 350px) {
-        .single-collection-slider .slide-collection .link-button {
-          font-size: 13px; } }
-  .single-collection-slider i {
-    color: #cccccc;
-    font-size: 12px; }
-  .single-collection-slider .slick-active i {
-    color: #0000ff; }
-  .single-collection-slider .slick-dots {
-    position: absolute;
-    bottom: 10px;
-    z-index: 9999;
-    width: 100%;
-    color: black;
-    display: flex;
-    justify-content: center;
-    list-style-type: none;
-    padding: 0; }
-    .single-collection-slider .slick-dots li {
-      margin-right: 5px; }
+.flickity-button.next {
+  background: transparent;
+  cursor: url("cursor/right.png"), auto; }
 
 .swing:hover {
   animation-name: swing;
@@ -682,14 +384,46 @@ header {
   .single-collection-content video {
     margin: 0 auto;
     width: 60%;
-    display: flex; }
+    display: flex;
+    transition: all 0.3s ease; }
+  .single-collection-content .content-product {
+    position: absolute;
+    top: 85px;
+    width: 300px;
+    /* background-color: white; */
+    left: 0px;
+    border: 1px solid black;
+    text-align: center;
+    display: none; }
+    .single-collection-content .content-product h3 {
+      font-size: 10px;
+      text-transform: uppercase;
+      font-family: "GT Super Text";
+      margin-bottom: 30px;
+      margin-top: 30px; }
+    .single-collection-content .content-product p {
+      font-size: 10px;
+      text-transform: uppercase;
+      margin-bottom: 30px;
+      color: black; }
+    .single-collection-content .content-product img {
+      width: 100%;
+      display: block;
+      border-bottom: 1px solid black; }
+    .single-collection-content .content-product .button {
+      text-decoration: underline;
+      font-size: 10px;
+      text-transform: uppercase;
+      color: #be282b;
+      margin-bottom: 30px; }
   .single-collection-content .close {
     position: absolute;
     right: 32px;
     top: 32px;
     width: 32px;
     height: 32px;
-    opacity: 0.8; }
+    opacity: 0.8;
+    cursor: pointer; }
   .single-collection-content .close:hover {
     opacity: 1; }
   .single-collection-content .close:before, .single-collection-content .close:after {
@@ -697,11 +431,32 @@ header {
     left: 15px;
     content: ' ';
     height: 15px;
-    width: 2px;
+    width: 1px;
     background-color: #000; }
   .single-collection-content .close:before {
     transform: rotate(45deg); }
   .single-collection-content .close:after {
+    transform: rotate(-45deg); }
+  .single-collection-content .close-product {
+    position: absolute;
+    right: 12px;
+    top: 12px;
+    width: 32px;
+    height: 32px;
+    opacity: 0.8;
+    cursor: pointer; }
+  .single-collection-content .close-product:hover {
+    opacity: 1; }
+  .single-collection-content .close-product:before, .single-collection-content .close-product:after {
+    position: absolute;
+    left: 15px;
+    content: ' ';
+    height: 15px;
+    width: 1px;
+    background-color: #000; }
+  .single-collection-content .close-product:before {
+    transform: rotate(45deg); }
+  .single-collection-content .close-product:after {
     transform: rotate(-45deg); }
   .single-collection-content .collection-content {
     position: absolute;
@@ -724,45 +479,10 @@ header {
       grid-template-columns: 1fr 1fr;
       border-top: 1px solid black;
       border-left: 1px solid black; }
-    .single-collection-content .collection-content .image-product img {
-      width: 100%; }
+    .single-collection-content .collection-content .image-product {
+      cursor: pointer; }
+      .single-collection-content .collection-content .image-product img {
+        width: 100%; }
   .single-collection-content .collection-images > .image-product {
     border-bottom: 1px solid black;
     border-right: 1px solid black; }
-
-.collection-container {
-  overflow: visible;
-  margin-top: 60px; }
-
-.text-center {
-  font-family: "GT Super Text";
-  font-size: 18px; }
-
-.collection {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center; }
-  .collection img {
-    object-fit: cover;
-    width: auto;
-    height: 65vh; }
-
-.swiper-wrapper {
-  transition-timing-function: linear !important; }
-
-.js-marquee {
-  display: flex; }
-
-footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0; }
-  footer .sound-logo img {
-    width: 14px; }
-  footer .copyright {
-    font-family: "GT Super Text";
-    font-size: 15px; }
-    footer .copyright svg {
-      width: 14px; }

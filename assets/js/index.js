@@ -80,7 +80,7 @@ jQuery(document).ready(function ($) {
 //////////////////////////////////////////////////////////////////////
 
 // Play with this value to change the speed
-let tickerSpeed = 2;
+let tickerSpeed = 1;
 
 let flickity = null;
 let isPaused = false;
@@ -122,9 +122,9 @@ const play = () => {
 
 flickity = new Flickity(slideshowEl, {
   autoPlay: false,
-  prevNextButtons: false,
+  prevNextButtons: true,
   pageDots: false,
-  draggable: true,
+  draggable: false,
   wrapAround: true,
   selectedAttraction: 0.015,
   friction: 0.25,
@@ -145,6 +145,7 @@ slideshowEl.addEventListener('focusout', play, false);
 
 flickity.on('dragStart', () => {
   isPaused = true;
+
 });
 
 

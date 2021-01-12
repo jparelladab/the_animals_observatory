@@ -21,63 +21,12 @@
 @import "pages/single-collection";
 
 
-.collection-container {
-  overflow: visible;
-  margin-top: 60px;
-}
-
-.text-center {
-  font-family:$super;
-  font-size:18px;
-}
-.collection-slider {
-}
-.collection {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items:center;
-	img {
-    object-fit:cover;
-    width:auto;
-    height:65vh;
-	}
-}
-
-.swiper-wrapper{
-  // transition-duration: 3s!important;
-  transition-timing-function: linear !important;
-}
-
-#marquee {
-  // display: none;
-}
-
-.js-marquee {
-	display: flex;
-}
-
-footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
 
 
-  .sound-logo {
-    img {
-      width:14px;
-    }
-  }
 
-  .copyright {
-    font-family: $super;
-    font-size: 15px;
-    svg {
-      width:14px;
-    }
-  }
-}
+
+
+
 
 
 

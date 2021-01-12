@@ -8,8 +8,7 @@ $(document).on('click', '.collection', function(){
         var that = $(this);
         var id = that.data('collection');
         var ajaxUrl = that.data('url');
-        const slideshowEl = document.querySelector('.main-carousel');
-        slideshowEl.addEventListener('click', pause, false);
+        
 
         $.ajax({
 
