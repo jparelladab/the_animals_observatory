@@ -35,13 +35,13 @@
 <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 
 <!-- Flickity -->
-<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/css/flickity.min.css">
+<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/css/flickity.min.css" media="screen">
 
 
 <script src="https://unpkg.com/swiper/swiper-bundle.js" defer></script>
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js" defer></script>
 
-  <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/assets/js/showroom.js" defer></script>
+<!-- <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/assets/js/showroom.js" defer></script> -->
 	<?php wp_head(); ?>
 
 	<!--[if IE]>
@@ -92,4 +92,3 @@
     </div> -->
   </header></a>
 
-	

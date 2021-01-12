@@ -127,7 +127,7 @@ function bones_scripts_and_styles() {
 
         wp_register_script( 'bootstrap-js', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js', array( 'jquery' ), '', true );
         wp_register_script( 'slick-js', 'http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js', array( 'jquery' ), '', true );
-        
+
         wp_register_script( 'main-js', get_stylesheet_directory_uri() . '/assets/js/index.js', array( 'jquery' ), '', true );
         // wp_register_script( 'mouse-move-js', get_stylesheet_directory_uri() . '/assets/js/mouseMove.js', array( 'jquery' ), '', true );
         // wp_register_script( 'progress-js', get_stylesheet_directory_uri() . '/assets/js/progressBar.js', array( 'jquery' ), '', true );
@@ -135,9 +135,9 @@ function bones_scripts_and_styles() {
         wp_register_script( 'rellaxjs', get_stylesheet_directory_uri() . '/assets/js/src/rellax.min.js', array( 'jquery' ), '', true );
         wp_register_script( 'rellaxInitjs', get_stylesheet_directory_uri() . '/assets/js/rellaxInit.js', array( 'jquery' ), '', true );
         wp_register_script( 'ajax', get_stylesheet_directory_uri() . '/assets/js/ajax.js', array( 'jquery' ), '', true );
-        
-        wp_register_script( 'splitText', get_stylesheet_directory_uri() . '/assets/js/splitText.js', array( 'jquery' ), '', true );
 
+        wp_register_script( 'splitText', get_stylesheet_directory_uri() . '/assets/js/splitText.js', array( 'jquery' ), '', true );
+        wp_register_script('flickity', get_stylesheet_directory_uri() . '/assets/js/src/flickity.min.js', array(), '', true);
 
         // enqueue styles and scripts
         wp_enqueue_style( 'fawesome-css' );
@@ -146,8 +146,9 @@ function bones_scripts_and_styles() {
         wp_enqueue_style( 'stylesheet' );
 
         wp_enqueue_script( 'bootstrap-js' );
-       
+
         wp_enqueue_script( 'slick-js' );
+        wp_enqueue_script( 'flickity');
         wp_enqueue_script( 'main-js' );
         // wp_enqueue_script( 'mouse-move-js' );
         wp_enqueue_script( 'marqueejs' );

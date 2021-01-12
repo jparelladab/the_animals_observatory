@@ -52,15 +52,7 @@ jQuery(document).ready(function ($) {
         console.log("hidden");
     }
 
-    $('.main-carousel').flickity({
-      autoPlay: true,
-      prevNextButtons: false,
-      pageDots: false,
-      draggable: true,
-      wrapAround: true,
-      selectedAttraction: 0.015,
-      friction: 0.25
-    });
+
 
 
     // $("#button-inside").on('click', function(){
@@ -337,6 +329,18 @@ jQuery(document).ready(function ($) {
       }
     });
 
+    // Flickity version jQuery
+    //Vanilla jS version below
+    // $('.main-carousel').flickity({
+    //   autoPlay: true,
+    //   prevNextButtons: false,
+    //   pageDots: false,
+    //   draggable: true,
+    //   wrapAround: true,
+    //   selectedAttraction: 0.015,
+    //   friction: 0.25
+    // });
+
 
 
 
@@ -344,7 +348,7 @@ jQuery(document).ready(function ($) {
 
 
 
-//
+//Flickity JS
 //   Variables
 //
 //////////////////////////////////////////////////////////////////////
@@ -392,7 +396,7 @@ const play = () => {
 
 flickity = new Flickity(slideshowEl, {
   autoPlay: false,
-  prevNextButtons: true,
+  prevNextButtons: false,
   pageDots: false,
   draggable: true,
   wrapAround: true,
