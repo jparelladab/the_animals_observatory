@@ -1,30 +1,15 @@
 jQuery(document).ready(function ($) {
 
 
-var opts = {
-    dots: true,
-    customPaging: function(slider, i) {
-    // this example would render "tabs" with titles
-        return '<i class="fa fa-circle"></i>';
-    },
-    infinite: true,
-    speed: 700,  
-    slidesToShow: 1, 
-    arrows: false,
-    fade: true,
-    centerMode: true,
-}
 
-$('.single-collection-slider').slick('unslick');
-
-/* Ajax functions */
-    $(document).on('click', '.category-image', function(){
+$(document).on('click', '.collection', function(){
         
 
         var that = $(this);
-        var slug = that.data('image');
+        var id = that.data('collection');
         var ajaxUrl = that.data('url');
-
+        const slideshowEl = document.querySelector('.main-carousel');
+        slideshowEl.addEventListener('click', pause, false);
 
         $.ajax({
 
@@ -32,7 +17,7 @@ $('.single-collection-slider').slick('unslick');
             type: 'post',
             data: {
 
-                slug: slug,
+                id: id,
                 action: 'category_btn' 
 
             },
@@ -42,16 +27,14 @@ $('.single-collection-slider').slick('unslick');
             success: function( response ){
 
                 $('.ajax-result-container').append( response );
-                $('.ajax-result-container').css('left', '0');
+                setTimeout(function() {$('.single-collection-content').css('opacity', '1');}, 300);
                 if($(window).width() > 990){
                     $('.ajax-result-container').css('width', '520px');
                     $('.main-content').css('margin-left', '520px');
                 } else {
                     $('.ajax-result-container').css('width', '100%');
                 }
-                
-                $('.single-collection-slider').slick(opts);
-                $('.single-collection-slider').css('opacity', '1');
+            
             } 
 
         });
@@ -59,49 +42,7 @@ $('.single-collection-slider').slick('unslick');
 
 
 
-    });
-
-    $(document).on('click', '.collection', function(){
-        
-
-        var that = $(this);
-        var id = that.data('collection');
-        var ajaxUrl = that.data('url');
-
-
-        $.ajax({
-
-            url: ajaxUrl,
-            type: 'post',
-            data: {
-
-                id: id,
-                action: 'category_btn_slider' 
-
-            },
-            error: function( response ){
-                console.log(response.error);
-            },
-            success: function( response ){
-
-                $('.ajax-result-container').append( response );
-                $('.ajax-result-container').css('left', '0');
-                if($(window).width() > 990){
-                    $('.ajax-result-container').css('width', '520px');
-                    $('.main-content').css('margin-left', '520px');
-                } else {
-                    $('.ajax-result-container').css('width', '100%');
-                }
-                $('.single-collection-slider').slick(opts);
-                $('.single-collection-slider').css('opacity', '1');
-            } 
-
-        });
-
-
-
-
-    });
+});
 
     
 
