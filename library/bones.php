@@ -130,7 +130,7 @@ function bones_scripts_and_styles() {
         
         wp_register_script( 'main-js', get_stylesheet_directory_uri() . '/assets/js/index.js', array( 'jquery' ), '', true );
         // wp_register_script( 'mouse-move-js', get_stylesheet_directory_uri() . '/assets/js/mouseMove.js', array( 'jquery' ), '', true );
-        wp_register_script( 'progress-js', get_stylesheet_directory_uri() . '/assets/js/progressBar.js', array( 'jquery' ), '', true );
+        // wp_register_script( 'progress-js', get_stylesheet_directory_uri() . '/assets/js/progressBar.js', array( 'jquery' ), '', true );
         wp_register_script( 'marqueejs', get_stylesheet_directory_uri() . '/assets/js/src/jquery.marquee.js', array( 'jquery' ), '', true );
         wp_register_script( 'rellaxjs', get_stylesheet_directory_uri() . '/assets/js/src/rellax.min.js', array( 'jquery' ), '', true );
         wp_register_script( 'rellaxInitjs', get_stylesheet_directory_uri() . '/assets/js/rellaxInit.js', array( 'jquery' ), '', true );
@@ -151,7 +151,7 @@ function bones_scripts_and_styles() {
         wp_enqueue_script( 'main-js' );
         // wp_enqueue_script( 'mouse-move-js' );
         wp_enqueue_script( 'marqueejs' );
-        wp_enqueue_script( 'progress-js' );
+        // wp_enqueue_script( 'progress-js' );
         wp_enqueue_script( 'rellaxjs' );
         wp_enqueue_script( 'rellaxInitjs' );
         wp_enqueue_script( 'ajax' );

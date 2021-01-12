@@ -52,9 +52,20 @@ jQuery(document).ready(function ($) {
         console.log("hidden");
     }
 
+    $('.main-carousel').flickity({
+      autoPlay: true,
+      prevNextButtons: false,
+      pageDots: false,
+      draggable: true,
+      wrapAround: true,
+      selectedAttraction: 0.015,
+      friction: 0.25
+    });
 
 
-
+    // $("#button-inside").on('click', function(){
+    //   $("#marquee").show();
+    // });
 
 
     $('.marquee').marquee({
@@ -104,41 +115,41 @@ jQuery(document).ready(function ($) {
     //   focusOnSelect: true,
     // });
 
-    var mySwiper = new Swiper('.swiper-container', {
-      // Optional parameters
-      direction: 'horizontal',
-      loop: true,
+    // var mySwiper = new Swiper('.swiper-container', {
+    //   // Optional parameters
+    //   direction: 'horizontal',
+    //   loop: true,
 
-      // If we need pagination
-      // pagination: {
-      //   el: '.swiper-pagination',
-      // },
+    //   // If we need pagination
+    //   // pagination: {
+    //   //   el: '.swiper-pagination',
+    //   // },
 
-      // Navigation arrows
-      // navigation: {
-      //   nextEl: '.swiper-button-next',
-      //   prevEl: '.swiper-button-prev',
-      // },
-      freeMode: true,
-      // autoplay: {
-      //   delay: 0
-      // },
-      autoplay: 400000,
+    //   // Navigation arrows
+    //   // navigation: {
+    //   //   nextEl: '.swiper-button-next',
+    //   //   prevEl: '.swiper-button-prev',
+    //   // },
+    //   freeMode: true,
+    //   // autoplay: {
+    //   //   delay: 0
+    //   // },
+    //   autoplay: 400000,
 
-      slidesPerView: 4,
-      speed: 1000,
-      grabCursor: true,
-      centeredSlides: true,
-      effect: 'slide',
-      reverseDirection: true,
-      waitForTransition: true,
-      disableOnInteraction: true
+    //   slidesPerView: 4,
+    //   speed: 5000,
+    //   grabCursor: true,
+    //   centeredSlides: true,
+    //   effect: 'slide',
+    //   reverseDirection: true,
+    //   // waitForTransition: true,
+    //   disableOnInteraction: true
 
-      // And if we need scrollbar
-      // scrollbar: {
-      //   el: '.swiper-scrollbar',
-      // },
-    });
+    //   // And if we need scrollbar
+    //   // scrollbar: {
+    //   //   el: '.swiper-scrollbar',
+    //   // },
+    // });
 
     // $(".swiper-container").hover(function() {
     //     (this).swiper.autoplay.stop();
@@ -146,13 +157,13 @@ jQuery(document).ready(function ($) {
     //     (this).swiper.autoplay.start();
     // });
 
-    $('.swiper-container').on('mouseover', function() {
-      (this).swiper.autoplay.stop();
-    });
+    // $('.swiper-container').on('mouseover', function() {
+    //   (this).swiper.autoplay.stop();
+    // });
 
-    $('.swiper-container').on('mouseout', function() {
-      (this).swiper.autoplay.start();
-    });
+    // $('.swiper-container').on('mouseout', function() {
+    //   (this).swiper.autoplay.start();
+    // });
 
     $('.slideshow').slick({
         dots: true,
@@ -333,5 +344,83 @@ jQuery(document).ready(function ($) {
 
 
 
+//
+//   Variables
+//
+//////////////////////////////////////////////////////////////////////
 
+// Play with this value to change the speed
+let tickerSpeed = 2;
+
+let flickity = null;
+let isPaused = false;
+const slideshowEl = document.querySelector('.main-carousel');
+
+
+//
+//   Functions
+//
+//////////////////////////////////////////////////////////////////////
+
+const update = () => {
+  if (isPaused) return;
+  if (flickity.slides) {
+    flickity.x = (flickity.x - tickerSpeed) % flickity.slideableWidth;
+    flickity.selectedIndex = flickity.dragEndRestingSelect();
+    flickity.updateSelectedSlide();
+    flickity.settle(flickity.x);
+  }
+  window.requestAnimationFrame(update);
+};
+
+const pause = () => {
+  isPaused = true;
+};
+
+const play = () => {
+  if (isPaused) {
+    isPaused = false;
+    window.requestAnimationFrame(update);
+  }
+};
+
+
+//
+//   Create Flickity
+//
+//////////////////////////////////////////////////////////////////////
+
+flickity = new Flickity(slideshowEl, {
+  autoPlay: false,
+  prevNextButtons: true,
+  pageDots: false,
+  draggable: true,
+  wrapAround: true,
+  selectedAttraction: 0.015,
+  friction: 0.25
+});
+flickity.x = 0;
+
+
+//
+//   Add Event Listeners
+//
+//////////////////////////////////////////////////////////////////////
+
+slideshowEl.addEventListener('mouseenter', pause, false);
+slideshowEl.addEventListener('focusin', pause, false);
+slideshowEl.addEventListener('mouseleave', play, false);
+slideshowEl.addEventListener('focusout', play, false);
+
+flickity.on('dragStart', () => {
+  isPaused = true;
+});
+
+
+//
+//   Start Ticker
+//
+//////////////////////////////////////////////////////////////////////
+
+update();
 

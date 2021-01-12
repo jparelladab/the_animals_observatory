@@ -34,6 +34,10 @@
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
 <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 
+<!-- Flickity -->
+<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/css/flickity.min.css">
+
+
 <script src="https://unpkg.com/swiper/swiper-bundle.js" defer></script>
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js" defer></script>
 
@@ -63,25 +67,29 @@
 
 
 	   	<div class="welcome-div">
-			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 275.66 442.25"><defs><style>.cls-1{fill:#fff;}</style></defs><title>Recurso 5</title><g id="Capa_2" data-name="Capa 2"><g id="Capa_1-2" data-name="Capa 1"><path class="cls-1" d="M138.61,0,0,221.08,138.6,442.25,275.66,221.72ZM94.15,120.79V237.25H90.64a12.91,12.91,0,0,0,0,25.82h94.88a12.91,12.91,0,0,0,0-25.82h-2.47V120.8l61.84,100.32L138.59,393.58,32.32,221.13Zm20.56,116.46V90.47l23.93-41.59,24.45,41-.64,147.41Z"/></g></g></svg>
-			<div class="splitTextDiv">Welcome</div>
-			<div id="button-inside">Enter</div>
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 275.66 442.25"><defs><style>.cls-1{fill:#000;}</style></defs><title>Recurso 5</title><g id="Capa_2" data-name="Capa 2"><g id="Capa_1-2" data-name="Capa 1"><path class="cls-1" d="M138.61,0,0,221.08,138.6,442.25,275.66,221.72ZM94.15,120.79V237.25H90.64a12.91,12.91,0,0,0,0,25.82h94.88a12.91,12.91,0,0,0,0-25.82h-2.47V120.8l61.84,100.32L138.59,393.58,32.32,221.13Zm20.56,116.46V90.47l23.93-41.59,24.45,41-.64,147.41Z"/></g></g></svg>
+			<div class="title-bold"><?php bloginfo('name') ?></div>
+			<div class="title-light"><?php bloginfo('description') ?></div>
+			<div class="text-small">Turn sound on</div>
+			<a id="button-inside">ENTER</a>
 		</div>
 	</div>
 
-	<a href="<?php echo get_home_url(); ?>">
-	<header id="header" class="header top <?php if (is_front_page()){echo "header-home";} ?>" role="banner" itemscope itemtype="http://schema.org/WPHeader">
-		<div class="scroll-left">
-			<div class="inner marquee">
-				<ul>
-					<li><strong>THE ANIMALS OBSERVATORY</strong> DIGITAL SHOWROOM <strong>SPRING/SUMMER 21</strong></li>
-					<li><strong>THE ANIMALS OBSERVATORY</strong> DIGITAL SHOWROOM <strong>SPRING/SUMMER 21</strong></li>
-					<li><strong>THE ANIMALS OBSERVATORY</strong> DIGITAL SHOWROOM <strong>SPRING/SUMMER 21</strong></li>
-				</ul>
+	<a id="marquee" href="<?php echo get_home_url(); ?>">
+  <header id="header" class="header top <?php if (is_front_page()){echo "header-home";} ?>" role="banner" itemscope itemtype="http://schema.org/WPHeader">
+    <div class="scroll-left">
+      <div class="inner marquee">
+        <ul>
+          <li><strong>THE ANIMALS OBSERVATORY</strong> DIGITAL SHOWROOM <strong>SPRING/SUMMER 21</strong></li>
+          <li><strong>THE ANIMALS OBSERVATORY</strong> DIGITAL SHOWROOM <strong>SPRING/SUMMER 21</strong></li>
+          <li><strong>THE ANIMALS OBSERVATORY</strong> DIGITAL SHOWROOM <strong>SPRING/SUMMER 21</strong></li>
+        </ul>
 
-			</div>
-		</div>
-	<!-- 	<div class="progress-container">
-		   <div id="progress_bar"></div>
-		</div> -->
-	</header></a>
+      </div>
+    </div>
+  <!--  <div class="progress-container">
+       <div id="progress_bar"></div>
+    </div> -->
+  </header></a>
+
+	
