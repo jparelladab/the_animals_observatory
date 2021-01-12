@@ -30,9 +30,6 @@
   font-style: normal;
   font-display: swap; }
 
-html {
-  height: 100%; }
-
 body {
   margin: 0;
   padding: 0;
@@ -41,7 +38,8 @@ body {
   overflow-x: scroll;
   overflow-y: hidden;
   font-size: 20px;
-  opacity: 1; }
+  opacity: 1;
+  background-color: #F4F3E3 !important; }
 
 article {
   display: flex; }
@@ -195,8 +193,7 @@ a:focus {
 header {
   background-color: #e9e9e9;
   height: 60px;
-  position: fixed;
-  top: 30px;
+  top: 0;
   left: 0;
   width: 100%;
   z-index: 9999; }
@@ -660,12 +657,25 @@ header {
   100% {
     transform: scale(1) rotate(0); } }
 
-.collection {
-  margin-top: 130px;
-  margin-right: 40px; }
+.collection-container {
+  overflow: visible;
+  margin-top: 60px; }
 
 .collection {
-  height: 60vh; }
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+  .collection img {
+    object-fit: cover;
+    width: 200px; }
+
+.swiper-wrapper {
+  transition-timing-function: linear !important; }
 
 .js-marquee {
   display: flex; }
+
+footer {
+  height: 100px;
+  background-color: #F4F3E3 !important; }

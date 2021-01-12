@@ -1,16 +1,17 @@
 html{
-  height: 100%;
+  // height: 100%;
 }
 
 body{
 	margin: 0;
 	padding: 0;
-  	height: 100%;
+  height: 100%;
 	outline: none !important;
-   overflow-x: scroll;
-   overflow-y: hidden;
+  overflow-x: scroll;
+  overflow-y: hidden;
 	font-size: 20px;
 	opacity: 1;
+  background-color: #F4F3E3 !important;
 }
 
 article{
@@ -92,7 +93,7 @@ a:focus{
 .loader {
       display:flex;
       justify-content: center;
-      
+
       align-items:center;
       margin-bottom: 40px;
       font-size:2em;
@@ -104,18 +105,18 @@ a:focus{
          position: relative;
          top:20px;
          left:-10px;
-         
+
          width:100px;
-         
+
          animation: dots 2s ease infinite 1s;
          div {
             position: relative;
-            
+
             width:10px;
             height:10px;
             margin-right:10px;
             border-radius:100%;
-            
+
             background-color:white;
             &:nth-child(1) {
                width:0px;
@@ -126,21 +127,21 @@ a:focus{
             }
             &:nth-child(4) {
                background-color:transparent;
-               
+
                animation: dot-fall-left 2s linear infinite 1s;
-               
+
                &:before {
                   position: absolute;
-            
+
                   width:10px;
                   height:10px;
                   margin-right:10px;
                   border-radius:100%;
 
                   background-color:white;
-                  
+
                   content: '';
-               
+
                   animation: dot-fall-top 2s cubic-bezier(0.46, 0.02, 0.94, 0.54) infinite 1s;
                }
             }

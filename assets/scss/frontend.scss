@@ -20,19 +20,39 @@
 @import "pages/splittext";
 
 
-.collection {
-	margin-top: 130px;
-	margin-right: 40px;
+
+.collection-container {
+  overflow: visible;
+  margin-top: 60px;
 }
 
+.collection-slider {
+}
 .collection {
-	height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:center;
 	img {
-		// height: 100%;
+    object-fit:cover;
+    width:200px;
+
 	}
 }
+
+.swiper-wrapper{
+  // transition-duration: 3s!important;
+  transition-timing-function: linear !important;
+}
+
+
 
 .js-marquee {
 	display: flex;
 
+}
+
+footer {
+  height:100px;
+  background-color: #F4F3E3 !important;
 }

@@ -3,7 +3,7 @@
 
 jQuery(document).ready(function ($) {
 
-    
+
 
     $.fn.isInViewport = function() {
       var elementTop = $(this).offset().top;
@@ -15,36 +15,36 @@ jQuery(document).ready(function ($) {
       return elementBottom > viewportTop && elementTop < viewportBottom;
     };
 
-    
 
-    
+
+
 
     //LOADER
-   
+
 
     $(window).on('load', function() {
-        
-       
-        
+
+
+
         $('.welcome-div').css('opacity', '1');
-        
-        
+
+
     });
 
     $(document).on('click', '#button-inside', function(){
         $('.loader').fadeOut();
-        
+
         // $('#ball').css('opacity', '1');
         // $('.video_div').children('video').prop('muted', false);
         // $('.video_div').children('video').get(0).play();
         // $('.lg-row-bg-video').children('video').get(0).play();
-        // $(document).scrollTop(0); 
+        // $(document).scrollTop(0);
         // setTimeout(function() {
         //     var rellax = new Rellax('.rellax', {
         //           wrapper:'.gryd-type'
         //         });
         // }, 300);
-          
+
     });
 
     if($(".loader").css('display') == 'flex') {
@@ -52,11 +52,11 @@ jQuery(document).ready(function ($) {
         console.log("hidden");
     }
 
-   
 
 
 
-    
+
+
     $('.marquee').marquee({
     //speed in milliseconds of the marquee
     duration: 15000,
@@ -71,24 +71,87 @@ jQuery(document).ready(function ($) {
     startVisible: true
     });
 
-    $('.collection-marquee').marquee({
-      //speed in milliseconds of the marquee
-      duration: 15000,
-      //gap in pixels between the tickers
-      gap: 30,
-      //time in milliseconds before the marquee will start animating
-      delayBeforeStart: 0,
-      //'left' or 'right'
-      direction: 'left',
-      //true or false - should the marquee be duplicated to show an effect of continues flow
-      duplicated: true,
-      startVisible: true
+    // $('.collection-marquee').marquee({
+    //   //speed in milliseconds of the marquee
+    //   duration: 15000,
+    //   //gap in pixels between the tickers
+    //   gap: 30,
+    //   //time in milliseconds before the marquee will start animating
+    //   delayBeforeStart: 0,
+    //   //'left' or 'right'
+    //   direction: 'left',
+    //   //true or false - should the marquee be duplicated to show an effect of continues flow
+    //   duplicated: true,
+    //   startVisible: true
+    // });
+
+    // $(".collection-marquee").hover(function () {
+    //     $(this).marquee("toggle");
+    // }, function () {
+    //     $(this).marquee("toggle");
+    // });
+
+    // $('.collection-marquee').slick({
+    //   speed: 500,
+    //   autoplay: true,
+    //   autoplaySpeed: 0.5,
+    //   cssEase: 'linear',
+    //   slidesToShow: 4,
+    //   slidesToScroll: 2,
+    //   infinite: true,
+    //   swipeToSlide: true,
+    //   centerMode: true,
+    //   focusOnSelect: true,
+    // });
+
+    var mySwiper = new Swiper('.swiper-container', {
+      // Optional parameters
+      direction: 'horizontal',
+      loop: true,
+
+      // If we need pagination
+      // pagination: {
+      //   el: '.swiper-pagination',
+      // },
+
+      // Navigation arrows
+      // navigation: {
+      //   nextEl: '.swiper-button-next',
+      //   prevEl: '.swiper-button-prev',
+      // },
+      freeMode: true,
+      // autoplay: {
+      //   delay: 0
+      // },
+      autoplay: 400000,
+
+      slidesPerView: 4,
+      speed: 1000,
+      grabCursor: true,
+      centeredSlides: true,
+      effect: 'slide',
+      reverseDirection: true,
+      waitForTransition: true,
+      disableOnInteraction: true
+
+      // And if we need scrollbar
+      // scrollbar: {
+      //   el: '.swiper-scrollbar',
+      // },
     });
 
-    $(".collection-marquee").hover(function () { 
-        $(this).marquee("toggle");
-    }, function () {
-        $(this).marquee("toggle");
+    // $(".swiper-container").hover(function() {
+    //     (this).swiper.autoplay.stop();
+    // }, function() {
+    //     (this).swiper.autoplay.start();
+    // });
+
+    $('.swiper-container').on('mouseover', function() {
+      (this).swiper.autoplay.stop();
+    });
+
+    $('.swiper-container').on('mouseout', function() {
+      (this).swiper.autoplay.start();
     });
 
     $('.slideshow').slick({
@@ -98,8 +161,8 @@ jQuery(document).ready(function ($) {
             return '<i class="fa fa-circle"></i>';
             },
         infinite: true,
-        speed: 700,  
-        slidesToShow: 1, 
+        speed: 700,
+        slidesToShow: 1,
         arrows: false,
         fade: true,
         centerMode: true,
@@ -121,7 +184,7 @@ jQuery(document).ready(function ($) {
 
           if ($(this).isInViewport()) {
               $(this).css('visibility', 'visible');
-          } 
+          }
        });
 
     $(window).scroll(function () {
@@ -129,7 +192,7 @@ jQuery(document).ready(function ($) {
 
           if ($(this).isInViewport()) {
               $(this).css('visibility', 'visible');
-              
+
           } else {
 
           }
@@ -143,7 +206,7 @@ jQuery(document).ready(function ($) {
     $('.category-image').hover(
     function () {
         $(this).children('.button-collection').appendTo('#ball').show('fast');
-    }, 
+    },
     function () {
         $('#ball').children('.button-collection').appendTo(this).hide();
     });
@@ -151,17 +214,17 @@ jQuery(document).ready(function ($) {
     $('.collection').hover(
     function () {
         $(this).children('.button-collection').appendTo('#ball').show('fast');
-    }, 
+    },
     function () {
         $('#ball').children('.button-collection').appendTo(this).hide();
     });
 
-    
-    
+
+
 
     $(window).on('resize scroll', function() {
       $('.button-music-div').each(function() {
-        if ($(this).isInViewport()) { 
+        if ($(this).isInViewport()) {
             var audio = $(this).children('audio')[0];
             var audioTag = $(this).children('audio');
             var played = $(this).children('audio').data('played');
@@ -171,33 +234,33 @@ jQuery(document).ready(function ($) {
               audioTag.data('played', '2');
               var result = audioTag.data('played');
               console.log(result);
-              
+
                 if (playPromise !== undefined) {
                   playPromise.then(_ => {
                     // Automatic playback started!
                     // Show playing UI.
                     audio.prop('volume', 0.2);
                     audio.play();
-                    
+
                   })
                   .catch(error => {
                     // Auto-play was prevented
                     // Show paused UI.
-                    
+
                   });
-                } 
-            } 
+                }
+            }
         } else {
             $(this).children('audio')[0].pause();
             $(this).children('audio')[0].currentTime = 0;
             $(this).children('audio').data('played', '1');
-                     
+
         }
       });
 
 
       $('video').each(function() {
-        if ($(this).isInViewport()) { 
+        if ($(this).isInViewport()) {
             var playPromise = $(this).get(0).play();
               if (playPromise !== undefined) {
                 playPromise.then(_ => {
@@ -209,23 +272,23 @@ jQuery(document).ready(function ($) {
                 .catch(error => {
                   // Auto-play was prevented
                   // Show paused UI.
-                  
+
                 });
               }
         } else {
-           $(this).get(0).pause(); 
+           $(this).get(0).pause();
         }
       });
 
-      
+
 
 
     });
 
-   
+
 
     $('.button-music-div').each(function() {
-        if ($(this).isInViewport()) { 
+        if ($(this).isInViewport()) {
             var audio = $(this).children('audio')[0];
             var playPromise = audio.play();
               if (playPromise !== undefined) {
@@ -237,15 +300,15 @@ jQuery(document).ready(function ($) {
                 .catch(error => {
                   // Auto-play was prevented
                   // Show paused UI.
-                  
+
                 });
               }
         } else {
-           $(this).children('audio')[0].pause(); 
+           $(this).children('audio')[0].pause();
         }
       });
 
-    
+
 
 
     var playing = false;
