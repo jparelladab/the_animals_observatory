@@ -673,6 +673,10 @@ header {
   overflow: visible;
   margin-top: 60px; }
 
+.text-center {
+  font-family: "GT Super Text";
+  font-size: 18px; }
+
 .collection {
   display: flex;
   flex-direction: column;
@@ -681,7 +685,7 @@ header {
   .collection img {
     object-fit: cover;
     width: auto;
-    height: 70vh; }
+    height: 65vh; }
 
 .swiper-wrapper {
   transition-timing-function: linear !important; }
@@ -690,5 +694,14 @@ header {
   display: flex; }
 
 footer {
-  height: 100px;
-  background-color: #F4F3E3 !important; }
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0; }
+  footer .sound-logo img {
+    width: 14px; }
+  footer .copyright {
+    font-family: "GT Super Text";
+    font-size: 15px; }
+    footer .copyright svg {
+      width: 14px; }

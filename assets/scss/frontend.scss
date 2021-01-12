@@ -26,6 +26,10 @@
   margin-top: 60px;
 }
 
+.text-center {
+  font-family:$super;
+  font-size:18px;
+}
 .collection-slider {
 }
 .collection {
@@ -36,7 +40,7 @@
 	img {
     object-fit:cover;
     width:auto;
-    height:70vh;
+    height:65vh;
 	}
 }
 
@@ -51,12 +55,28 @@
 
 .js-marquee {
 	display: flex;
-
 }
 
 footer {
-  height:100px;
-  background-color: #F4F3E3 !important;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+
+  .sound-logo {
+    img {
+      width:14px;
+    }
+  }
+
+  .copyright {
+    font-family: $super;
+    font-size: 15px;
+    svg {
+      width:14px;
+    }
+  }
 }
 
 
