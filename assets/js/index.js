@@ -76,6 +76,15 @@ jQuery(document).ready(function ($) {
 
 
 
+    //Toggle sound
+
+    $(".sound-logo").click(function() {
+      var bool = $(".audio-home").prop("muted");
+      $(".audio-home").prop("muted",!bool);
+    });
+
+
+
 
 });
 
@@ -142,6 +151,26 @@ const play = () => {
   flickity.x = 0;
 
 
+// use x and y mousewheel event data to navigate flickity
+function flickity_handle_wheel_event(e, flickity_instance, flickity_is_animating) {
+  // do not trigger a slide change if another is being animated
+  if (!flickity_is_animating) {
+    // pick the larger of the two delta magnitudes (x or y) to determine nav direction
+    var direction = (Math.abs(e.deltaX) > Math.abs(e.deltaY)) ? e.deltaX : e.deltaY;
+
+    console.log("wheel scroll ", e.deltaX, e.deltaY, direction);
+
+    if (direction > 0) {
+      // next slide
+      flickity_instance.next();
+    } else {
+      // prev slide
+      flickity_instance.previous();
+    }
+  }
+}
+
+var flickity_is_animating = false;
 
 
 //
@@ -162,6 +191,14 @@ flickity.on('dragStart', () => {
 
 });
 
+// flickity.on( 'scroll', function( progress ) {
+//   console.log('scroooling');
+// });
+
+slideshowEl.onwheel = function(e) {
+  flickity_handle_wheel_event(e, flickity, flickity_is_animating);
+  // console.log('scroool');
+}
 
 //
 //   Start Ticker

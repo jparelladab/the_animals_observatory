@@ -251,8 +251,10 @@ footer {
   left: 0;
   right: 0;
   padding: 10px 30px; }
-  footer .sound-logo img {
-    width: 14px; }
+  footer .sound-logo {
+    cursor: pointer; }
+    footer .sound-logo img {
+      width: 14px; }
   footer .copyright {
     font-family: "GT Super Text";
     font-size: 15px; }

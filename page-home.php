@@ -18,7 +18,7 @@
 </div>
 
 <div class="ajax-result-container">
-	
+
 </div>
 
 
