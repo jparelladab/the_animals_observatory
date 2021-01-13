@@ -45,6 +45,13 @@ jQuery(document).ready(function ($) {
         //         });
         // }, 300);
 
+        $('.audio-home')[0].play();
+        $('.audio-home')[0].volume = 0.8;
+
+    });
+
+    $('.close-product').click(function(){
+        setTimeout(function() {$('.audio-home')[0].volume = 0.8;}, 200);
     });
 
     if($(".loader").css('display') == 'flex') {
@@ -73,7 +80,7 @@ jQuery(document).ready(function ($) {
 });
 
 
-
+window.onload = (event) => {
 //Flickity JS
 //   Variables
 //
@@ -85,6 +92,7 @@ let tickerSpeed = 1;
 let flickity = null;
 let isPaused = false;
 const slideshowEl = document.querySelector('.main-carousel');
+const singleCol = document.querySelector('.ajax-result-container');
 
 
 //
@@ -120,17 +128,20 @@ const play = () => {
 //
 //////////////////////////////////////////////////////////////////////
 
-flickity = new Flickity(slideshowEl, {
-  autoPlay: false,
-  prevNextButtons: true,
-  pageDots: false,
-  draggable: false,
-  wrapAround: true,
-  selectedAttraction: 0.015,
-  friction: 0.25,
-  groupCells: 1
-});
-flickity.x = 0;
+
+  flickity = new Flickity(slideshowEl, {
+    autoPlay: false,
+    prevNextButtons: true,
+    pageDots: false,
+    draggable: false,
+    wrapAround: true,
+    selectedAttraction: 0.015,
+    friction: 0.25,
+    groupCells: 1
+  });
+  flickity.x = 0;
+
+
 
 
 //
@@ -142,6 +153,9 @@ slideshowEl.addEventListener('mouseenter', pause, false);
 slideshowEl.addEventListener('focusin', pause, false);
 slideshowEl.addEventListener('mouseleave', play, false);
 slideshowEl.addEventListener('focusout', play, false);
+
+singleCol.addEventListener('mouseenter', pause, false);
+
 
 flickity.on('dragStart', () => {
   isPaused = true;
@@ -155,4 +169,7 @@ flickity.on('dragStart', () => {
 //////////////////////////////////////////////////////////////////////
 
 update();
+};
+
+
 

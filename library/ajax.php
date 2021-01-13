@@ -29,7 +29,8 @@ function category_btn() {
 
 	<div class="single-collection-content">
 	<div class="close"></div>
-	<video src="<?php the_field('video', 'category_'. $category->term_id .'') ?>" autoplay loop muted></video>			
+	<video src="<?php the_field('video', 'category_'. $category->term_id .'') ?>" autoplay loop muted></video>	
+	<audio src="<?php the_field('audio', 'category_'. $category->term_id .'') ?>" class="audio-collection"></audio>		
 	<?php
 
 	if ( $query->have_posts() ) :
@@ -66,7 +67,12 @@ function category_btn() {
       				<div class="close-product"></div>
 		 			<img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php the_title(); ?>">
 		 			<h3><?php the_title(); ?></h3>
-		 			<?php the_field('content'); ?>
+		 			<?php if( '' !== get_post()->post_content ) {
+					// do something
+		 				the_content();
+					} else {
+						the_field('content');
+					} ?>
 		 			<a href="<?php the_field('link'); ?>"><div class="button">B2B Link</div></a>
 		 		</div>
 		 	<?php
@@ -84,10 +90,32 @@ function category_btn() {
    			$('.close').click(function(){
    				$('.single-collection-content').fadeOut();
    				setTimeout(function() {$('.ajax-result-container').empty();}, 1000);
+   				setTimeout(function() {$('.audio-home')[0].volume = 0.8; $('main-carousel').flickity('playPlayer');}, 200);
    			});
 
    			$('video').on('mousemove', function(e){
 			    $('video').css('transform', 'translateY(-'+e.pageY+'px)');
+			});
+
+			$('video').on('mouseleave', function(e){
+			    $(this).css('width', '60%');
+			});
+
+			$('video').mousedown(function(event) {
+				$('video').css('transform', 'translateY(-'+event.pageY+'px)');
+			    switch (event.which) {
+			        case 1:
+			            $(this).css('width', '90%');
+			            break;
+			        case 2:
+			            
+			            break;
+			        case 3:
+			            $(this).css('width', '60%');
+			            break;
+			        default:
+			            
+			    }
 			});
 
 			$('.image-product').click(function(){
@@ -99,6 +127,7 @@ function category_btn() {
 			$('.close-product').click(function(){
 				$('.content-product').fadeOut();
 				$('.collection-images').fadeIn();
+
 			});
    		});
    	</script>
