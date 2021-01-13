@@ -74,13 +74,11 @@ jQuery(document).ready(function ($) {
     startVisible: true
     });
 
-
-
-    //Toggle sound
-
     $(".sound-logo").click(function() {
       var bool = $(".audio-home").prop("muted");
       $(".audio-home").prop("muted",!bool);
+      $("#volume-on").toggle();
+      $("#volume-off").toggle();
     });
 
 
@@ -158,7 +156,7 @@ function flickity_handle_wheel_event(e, flickity_instance, flickity_is_animating
     // pick the larger of the two delta magnitudes (x or y) to determine nav direction
     var direction = (Math.abs(e.deltaX) > Math.abs(e.deltaY)) ? e.deltaX : e.deltaY;
 
-    console.log("wheel scroll ", e.deltaX, e.deltaY, direction);
+    console.log("wheel scroll", e.deltaX, e.deltaY, direction);
 
     if (direction > 0) {
       // next slide
@@ -172,33 +170,52 @@ function flickity_handle_wheel_event(e, flickity_instance, flickity_is_animating
 
 var flickity_is_animating = false;
 
+ function createWheelStopListener(element, callback, timeout) {
+        var handle = null;
+        var onScroll = function() {
+            if (handle) {
+                clearTimeout(handle);
+            }
+            handle = setTimeout(callback, timeout || 200); // default 200 ms
+        };
+        element.addEventListener('wheel', onScroll);
+        return function() {
+            element.removeEventListener('wheel', onScroll);
+        };
+    }
+
 
 //
 //   Add Event Listeners
 //
 //////////////////////////////////////////////////////////////////////
+const arrowsNext = document.querySelector('.next');
+const arrowsPrev = document.querySelector('.previous');
 
-slideshowEl.addEventListener('mouseenter', pause, false);
-slideshowEl.addEventListener('focusin', pause, false);
-slideshowEl.addEventListener('mouseleave', play, false);
-slideshowEl.addEventListener('focusout', play, false);
-
+slideshowEl.addEventListener('wheel', pause, false);
 singleCol.addEventListener('mouseenter', pause, false);
+singleCol.addEventListener('mouseleave', play, false);
 
+arrowsNext.addEventListener('mouseenter', pause, false);
+arrowsNext.addEventListener('mouseleave', play, false);
+arrowsPrev.addEventListener('mouseenter', pause, false);
+arrowsPrev.addEventListener('mouseleave', play, false);
+
+createWheelStopListener(slideshowEl, function() {
+    console.log('stop');
+    play();
+});
 
 flickity.on('dragStart', () => {
   isPaused = true;
 
 });
 
-// flickity.on( 'scroll', function( progress ) {
-//   console.log('scroooling');
-// });
-
 slideshowEl.onwheel = function(e) {
   flickity_handle_wheel_event(e, flickity, flickity_is_animating);
   // console.log('scroool');
 }
+
 
 //
 //   Start Ticker

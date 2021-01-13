@@ -15,7 +15,10 @@
 	    width: 60%;
 	    display: flex;
 	    transition: all 0.3s ease;
+	    cursor: -webkit-zoom-in;
+   		cursor: zoom-in;
 	}
+
 
 	.content-product{
 		position: absolute;
@@ -30,6 +33,7 @@
 	    	font-size: 10px;
 	    	text-transform: uppercase;
 	    	font-family: $super;
+	    	letter-spacing: 2px;
 	    	margin-bottom: 30px;
 	    	margin-top: 30px;
 	    }
@@ -65,6 +69,7 @@
 	  height: 32px;
 	  opacity: 0.8;
 	  cursor:pointer;
+	  z-index: 9999;
 	}
 	.close:hover {
 	  opacity: 1;
@@ -119,6 +124,7 @@
 	    left: 50px;
 	    .title-single{
 			font-family: $super;
+			letter-spacing: 2px;
 			text-align: center;
 			h5{
 				font-size: 12px;

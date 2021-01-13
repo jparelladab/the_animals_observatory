@@ -9,7 +9,7 @@
 
   		 foreach($categories as $category) {   ?>
 
-  		 	<div class="collection carousel-cell" data-collection="<?php echo $category->term_id; ?>" data-url="http://localhost:81/the_animals_observatory/wp-admin/admin-ajax.php" draggable="true" clickable="true">
+  		 	<div class="collection carousel-cell" data-collection="<?php echo $category->term_id; ?>" data-url="http://animalsobservatory.capitanproject.com/wp-admin/admin-ajax.php" draggable="true" clickable="true">
   		 		<p class="text-center"><?php echo $category->name; ?></p>
   				<img src="<?php the_field('image', 'category_'. $category->term_id .'') ?>">
   		 	</div>
@@ -18,7 +18,7 @@
 </div>
 
 <div class="ajax-result-container">
-
+	
 </div>
 
 

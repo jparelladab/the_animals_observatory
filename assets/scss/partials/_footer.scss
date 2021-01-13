@@ -14,10 +14,11 @@ footer {
   }
 
   .copyright {
-    font-family: $super;
-    font-size: 15px;
+    font-family: $superlight;
+    letter-spacing: 2px;
+    font-size: 12px;
     svg {
-      width:14px;
+      width:12px;
     }
   }
 }

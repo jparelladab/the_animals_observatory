@@ -67,14 +67,26 @@ a:focus{
       }
    }
 
+   .title-light{
+      font-family: $super;
+      letter-spacing: 2px;
+   }
+
+   .title-small{
+      font-family: $super;
+      letter-spacing: 2px;
+   }
+
    #button-inside{
       font-size: 10px;
       margin: 20px auto;
-      padding: 5px 25px;
+      padding: 5px 25px 7px;
       border: 1px solid black;
       width: 200px;
       font-family: $pressura;
+      letter-spacing: 2px;
       border-radius: 30px;
+
 
    }
 

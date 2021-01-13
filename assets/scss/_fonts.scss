@@ -25,27 +25,27 @@
 }
 
 @font-face {
-    font-family: 'GT Super Text';
-    src: url('fonts/GTSuperText-Regular.eot');
-    src: url('fonts/GTSuperText-Regular.eot?#iefix') format('embedded-opentype'),
-        url('fonts/GTSuperText-Regular.woff2') format('woff2'),
-        url('fonts/GTSuperText-Regular.woff') format('woff'),
-        url('fonts/GTSuperText-Regular.ttf') format('truetype'),
-        url('fonts/GTSuperText-Regular.svg#GTSuperText-Regular') format('svg');
+    font-family: 'Centurybold';
+    src: url('fonts/CenturySchoolbook-Bold.eot');
+    src: url('fonts/CenturySchoolbook-Bold.eot?#iefix') format('embedded-opentype'),
+        url('fonts/CenturySchoolbook-Bold.woff2') format('woff2'),
+        url('fonts/CenturySchoolbook-Bold.woff') format('woff'),
+        url('fonts/CenturySchoolbook-Bold.ttf') format('truetype'),
+        url('fonts/CenturySchoolbook-Bold.svg#CenturySchoolbook-Bold') format('svg');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
 }
 
 @font-face {
-    font-family: 'GT Super Display';
-    src: url('fonts/GTSuperDisplay-Light.eot');
-    src: url('fonts/GTSuperDisplay-Light.eot?#iefix') format('embedded-opentype'),
-        url('fonts/GTSuperDisplay-Light.woff2') format('woff2'),
-        url('fonts/GTSuperDisplay-Light.woff') format('woff'),
-        url('fonts/GTSuperDisplay-Light.ttf') format('truetype'),
-        url('fonts/GTSuperDisplay-Light.svg#GTSuperDisplay-Light') format('svg');
-    font-weight: 300;
+    font-family: 'Century';
+    src: url('fonts/CenturySchoolbook.eot');
+    src: url('fonts/CenturySchoolbook.eot?#iefix') format('embedded-opentype'),
+        url('fonts/CenturySchoolbook.woff2') format('woff2'),
+        url('fonts/CenturySchoolbook.woff') format('woff'),
+        url('fonts/CenturySchoolbook.ttf') format('truetype'),
+        url('fonts/CenturySchoolbook.svg#CenturySchoolbook') format('svg');
+    font-weight: normal;
     font-style: normal;
     font-display: swap;
 }

@@ -15,18 +15,18 @@
   font-display: swap; }
 
 @font-face {
-  font-family: 'GT Super Text';
-  src: url("fonts/GTSuperText-Regular.eot");
-  src: url("fonts/GTSuperText-Regular.eot?#iefix") format("embedded-opentype"), url("fonts/GTSuperText-Regular.woff2") format("woff2"), url("fonts/GTSuperText-Regular.woff") format("woff"), url("fonts/GTSuperText-Regular.ttf") format("truetype"), url("fonts/GTSuperText-Regular.svg#GTSuperText-Regular") format("svg");
+  font-family: 'Centurybold';
+  src: url("fonts/CenturySchoolbook-Bold.eot");
+  src: url("fonts/CenturySchoolbook-Bold.eot?#iefix") format("embedded-opentype"), url("fonts/CenturySchoolbook-Bold.woff2") format("woff2"), url("fonts/CenturySchoolbook-Bold.woff") format("woff"), url("fonts/CenturySchoolbook-Bold.ttf") format("truetype"), url("fonts/CenturySchoolbook-Bold.svg#CenturySchoolbook-Bold") format("svg");
   font-weight: normal;
   font-style: normal;
   font-display: swap; }
 
 @font-face {
-  font-family: 'GT Super Display';
-  src: url("fonts/GTSuperDisplay-Light.eot");
-  src: url("fonts/GTSuperDisplay-Light.eot?#iefix") format("embedded-opentype"), url("fonts/GTSuperDisplay-Light.woff2") format("woff2"), url("fonts/GTSuperDisplay-Light.woff") format("woff"), url("fonts/GTSuperDisplay-Light.ttf") format("truetype"), url("fonts/GTSuperDisplay-Light.svg#GTSuperDisplay-Light") format("svg");
-  font-weight: 300;
+  font-family: 'Century';
+  src: url("fonts/CenturySchoolbook.eot");
+  src: url("fonts/CenturySchoolbook.eot?#iefix") format("embedded-opentype"), url("fonts/CenturySchoolbook.woff2") format("woff2"), url("fonts/CenturySchoolbook.woff") format("woff"), url("fonts/CenturySchoolbook.ttf") format("truetype"), url("fonts/CenturySchoolbook.svg#CenturySchoolbook") format("svg");
+  font-weight: normal;
   font-style: normal;
   font-display: swap; }
 
@@ -85,13 +85,20 @@ a:focus {
       .welcome-div svg {
         width: 120px;
         margin: 0 auto 20px; } }
+  .welcome-div .title-light {
+    font-family: "Centurybold";
+    letter-spacing: 2px; }
+  .welcome-div .title-small {
+    font-family: "Centurybold";
+    letter-spacing: 2px; }
   .welcome-div #button-inside {
     font-size: 10px;
     margin: 20px auto;
-    padding: 5px 25px;
+    padding: 5px 25px 7px;
     border: 1px solid black;
     width: 200px;
     font-family: "GT Pressura Mono";
+    letter-spacing: 2px;
     border-radius: 30px; }
   .welcome-div #button-inside:hover {
     cursor: pointer;
@@ -220,7 +227,8 @@ header {
     justify-content: space-between;
     font-size: 25px; }
     .scroll-left .inner ul li {
-      font-family: "GT Super Display";
+      font-family: "Century";
+      letter-spacing: 2px;
       margin: 0 40px; }
       .scroll-left .inner ul li strong {
         font-family: "GT America";
@@ -236,11 +244,11 @@ header {
   text-transform: uppercase; }
 
 .title-light {
-  font-family: "GT Super Display"; }
+  font-family: "Century"; }
 
 .text-small {
   font-size: 14px;
-  font-family: "GT Super Text"; }
+  font-family: "Centurybold"; }
 
 .js-marquee {
   display: flex; }
@@ -256,17 +264,19 @@ footer {
     footer .sound-logo img {
       width: 14px; }
   footer .copyright {
-    font-family: "GT Super Text";
-    font-size: 15px; }
+    font-family: "Century";
+    letter-spacing: 2px;
+    font-size: 12px; }
     footer .copyright svg {
-      width: 14px; }
+      width: 12px; }
 
 .collection-container {
   overflow: visible;
   margin-top: 60px; }
 
 .text-center {
-  font-family: "GT Super Text";
+  font-family: "Centurybold";
+  letter-spacing: 2px;
   font-size: 18px; }
 
 .collection {
@@ -387,7 +397,9 @@ footer {
     margin: 0 auto;
     width: 60%;
     display: flex;
-    transition: all 0.3s ease; }
+    transition: all 0.3s ease;
+    cursor: -webkit-zoom-in;
+    cursor: zoom-in; }
   .single-collection-content .content-product {
     position: absolute;
     top: 85px;
@@ -400,7 +412,8 @@ footer {
     .single-collection-content .content-product h3 {
       font-size: 10px;
       text-transform: uppercase;
-      font-family: "GT Super Text";
+      font-family: "Centurybold";
+      letter-spacing: 2px;
       margin-bottom: 30px;
       margin-top: 30px; }
     .single-collection-content .content-product p {
@@ -425,7 +438,8 @@ footer {
     width: 32px;
     height: 32px;
     opacity: 0.8;
-    cursor: pointer; }
+    cursor: pointer;
+    z-index: 9999; }
   .single-collection-content .close:hover {
     opacity: 1; }
   .single-collection-content .close:before, .single-collection-content .close:after {
@@ -467,7 +481,8 @@ footer {
     /* background-color: white; */
     left: 50px; }
     .single-collection-content .collection-content .title-single {
-      font-family: "GT Super Text";
+      font-family: "Centurybold";
+      letter-spacing: 2px;
       text-align: center; }
       .single-collection-content .collection-content .title-single h5 {
         font-size: 12px;
